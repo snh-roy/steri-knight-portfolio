@@ -24,9 +24,11 @@ export function Nav() {
               key={it.to}
               to={it.to}
               activeOptions={{ exact: true }}
-              activeProps={{ className: "text-primary border-primary/60" }}
-              inactiveProps={{ className: "text-ink-dim border-transparent hover:text-foreground" }}
-              className="label-mono !text-[0.68rem] !text-inherit border-t-2 px-2 py-1 transition-colors sm:px-3"
+              activeProps={{ className: "!text-primary border-primary/60" }}
+              inactiveProps={{
+                className: "text-ink-dim border-transparent hover:text-foreground",
+              }}
+              className="label-mono !text-[0.68rem] border-t-2 px-2 py-1 transition-colors sm:px-3"
             >
               {it.label}
             </Link>
