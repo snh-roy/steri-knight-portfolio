@@ -31,7 +31,7 @@ function ExperiencePage() {
           <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-16">
             <div className="flex flex-col items-center flex-shrink-0">
               <img 
-                src="/Hunter.png" 
+                src="/steri-knight-portfolio/Hunter.png" 
                 alt="Hunter College" 
                 className="w-40 h-40 object-contain mb-3"
               />
@@ -58,7 +58,7 @@ function ExperiencePage() {
           <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-16">
             <div className="flex flex-col items-center flex-shrink-0">
               <img 
-                src="/codepath.png" 
+                src="/steri-knight-portfolio/codepath.png" 
                 alt="CodePath" 
                 className="w-40 h-40 object-contain mb-3"
               />

@@ -64,7 +64,7 @@ function About() {
       {/* Layer 1: Starry Night background - fills entire viewport */}
       <div className="absolute inset-0 anim-fade">
         <img
-          src="/starry-night.jpg"
+          src="/steri-knight-portfolio/starry-night.jpg"
           alt=""
           aria-hidden
           className="h-full w-full object-cover"

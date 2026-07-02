@@ -6,7 +6,7 @@ export const experience: TimelineEntryProps[] = [
     date: "AUG 2025 — DEC 2025",
     role: "App Development Intern",
     company: "NYC Department of Transportation",
-    logo: "/NYCDOT.png",
+    logo: "/steri-knight-portfolio/NYCDOT.png",
     bullets: [
       "Built an interactive web application that helps New Yorkers report and track streetlight conditions, collaborating with another intern to improve how maintenance teams inspect and handle streetlight bases.",
       "Designed and implemented the full stack — Python and Flask on the backend, JavaScript on a dynamic front-end, HTML/CSS for the user interface.",
@@ -18,7 +18,7 @@ export const experience: TimelineEntryProps[] = [
     date: "JUL 2025 — AUG 2025",
     role: "Drupal Developer & Website Designer Intern",
     company: "Art Beyond Sight",
-    logo: "/ABS.png",
+    logo: "/steri-knight-portfolio/ABS.png",
     bullets: [
       "Managed and customized Drupal content and components, improving site usability and accessibility across key public-facing pages.",
       "Worked with a group of interns to design and implement native forms, streamlining communication workflows with investors and partners.",
