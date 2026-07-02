@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { Shield } from "./Shield";
 
 const items = [
   { to: "/", label: "About" },
@@ -10,14 +9,7 @@ const items = [
 export function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-rule/80 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-5 sm:px-8">
-        <Link
-          to="/"
-          className="flex items-center gap-2 text-foreground transition-colors hover:text-primary"
-        >
-          <Shield className="h-5 w-5 text-primary" />
-          <span className="label-mono !text-[0.7rem] !text-foreground">Steri Knight</span>
-        </Link>
+      <div className="mx-auto flex h-14 max-w-5xl items-center justify-end px-5 sm:px-8">
         <nav className="flex items-center gap-1 sm:gap-2">
           {items.map((it) => (
             <Link

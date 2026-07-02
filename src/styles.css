@@ -36,30 +36,30 @@
 }
 
 :root {
-  /* Steri Knight — deep navy blueprint + indigo/violet accent */
+  /* Light workshop-notebook palette with indigo accent */
   --radius: 0.25rem;
-  --background: oklch(0.17 0.03 265);
-  --foreground: oklch(0.94 0.01 260);
-  --card: oklch(0.20 0.03 265);
-  --card-foreground: oklch(0.94 0.01 260);
-  --popover: oklch(0.20 0.03 265);
-  --popover-foreground: oklch(0.94 0.01 260);
-  --primary: oklch(0.72 0.18 285);
-  --primary-foreground: oklch(0.14 0.03 265);
-  --secondary: oklch(0.24 0.03 265);
-  --secondary-foreground: oklch(0.94 0.01 260);
-  --muted: oklch(0.23 0.03 265);
-  --muted-foreground: oklch(0.70 0.02 260);
-  --accent: oklch(0.72 0.18 285);
-  --accent-foreground: oklch(0.14 0.03 265);
+  --background: oklch(0.975 0.012 90);
+  --foreground: oklch(0.22 0.03 265);
+  --card: oklch(0.995 0.006 90);
+  --card-foreground: oklch(0.22 0.03 265);
+  --popover: oklch(0.995 0.006 90);
+  --popover-foreground: oklch(0.22 0.03 265);
+  --primary: oklch(0.52 0.20 280);
+  --primary-foreground: oklch(0.98 0.005 90);
+  --secondary: oklch(0.94 0.01 85);
+  --secondary-foreground: oklch(0.22 0.03 265);
+  --muted: oklch(0.94 0.01 85);
+  --muted-foreground: oklch(0.42 0.02 265);
+  --accent: oklch(0.52 0.20 280);
+  --accent-foreground: oklch(0.98 0.005 90);
   --destructive: oklch(0.60 0.22 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.32 0.03 265);
-  --input: oklch(0.28 0.03 265);
-  --ring: oklch(0.72 0.18 285);
-  --ink-dim: oklch(0.72 0.02 260);
-  --ink-faint: oklch(0.55 0.03 265);
-  --rule: oklch(0.28 0.03 265);
+  --border: oklch(0.86 0.012 85);
+  --input: oklch(0.90 0.010 85);
+  --ring: oklch(0.52 0.20 280);
+  --ink-dim: oklch(0.42 0.02 265);
+  --ink-faint: oklch(0.58 0.02 265);
+  --rule: oklch(0.86 0.012 85);
 }
 
 @layer base {
@@ -68,7 +68,7 @@
   }
 
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
@@ -76,13 +76,13 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     background-image:
-      linear-gradient(to right, color-mix(in oklab, var(--rule) 70%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in oklab, var(--rule) 70%, transparent) 1px, transparent 1px);
+      linear-gradient(to right, color-mix(in oklab, var(--rule) 60%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--rule) 60%, transparent) 1px, transparent 1px);
     background-size: 56px 56px, 56px 56px;
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--primary) 45%, transparent);
+    background: color-mix(in oklab, var(--primary) 30%, transparent);
     color: var(--foreground);
   }
 }
@@ -133,4 +133,23 @@
     border-bottom-width: 2px;
     border-right-width: 2px;
   }
+}
+
+@keyframes sk-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes sk-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility anim-fade {
+  animation: sk-fade-in 1.2s ease-out both;
+}
+@utility anim-fade-slow {
+  animation: sk-fade-in 1.6s ease-out both;
+}
+@utility anim-rise {
+  animation: sk-rise 0.9s ease-out both;
 }

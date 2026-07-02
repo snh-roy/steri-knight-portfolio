@@ -79,18 +79,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Fahid Ahmed — Steri Knight" },
+      { title: "Fahid Ahmed — Portfolio" },
       {
         name: "description",
         content:
           "Portfolio of Fahid Ahmed — CS student at Hunter College building thoughtful software in NYC.",
       },
       { name: "author", content: "Fahid Ahmed" },
-      { property: "og:title", content: "Fahid Ahmed — Steri Knight" },
+      { property: "og:title", content: "Fahid Ahmed — Portfolio" },
       {
         property: "og:description",
         content:
-          "About, experience, and projects — engineered by hand under the Steri Knight banner.",
+          "About, experience, and projects — engineered by hand.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
