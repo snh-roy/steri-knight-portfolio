@@ -24,7 +24,6 @@ export function ProjectCard(p: ProjectCardProps) {
       <p className="mt-3 text-sm leading-relaxed text-ink-dim">{p.description}</p>
 
       <div className="mt-5">
-        <div className="label-mono mb-2">Implementation notes</div>
         <ul className="space-y-2 text-sm leading-relaxed text-ink-dim">
           {p.bullets.map((b, i) => (
             <li key={i} className="flex gap-3">

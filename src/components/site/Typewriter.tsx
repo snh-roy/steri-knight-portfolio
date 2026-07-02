@@ -6,12 +6,14 @@ export function Typewriter({
   startDelay = 0,
   className = "",
   onDone,
+  showCursor = true,
 }: {
   text: string;
   speed?: number;
   startDelay?: number;
   className?: string;
   onDone?: () => void;
+  showCursor?: boolean;
 }) {
   const [i, setI] = useState(0);
 
@@ -43,14 +45,16 @@ export function Typewriter({
   return (
     <span className={className}>
       {text.slice(0, i)}
-      <span
-        aria-hidden
-        className={
-          "ml-0.5 inline-block w-[0.55ch] -translate-y-[0.05em] bg-primary align-middle " +
-          (done ? "animate-pulse" : "")
-        }
-        style={{ height: "0.9em" }}
-      />
+      {showCursor && (
+        <span
+          aria-hidden
+          className={
+            "ml-0.5 inline-block w-[0.55ch] -translate-y-[0.05em] bg-white align-middle " +
+            (done ? "animate-pulse" : "")
+          }
+          style={{ height: "0.9em" }}
+        />
+      )}
     </span>
   );
 }

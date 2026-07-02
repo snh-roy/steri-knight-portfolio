@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SectionHeading } from "@/components/site/SectionHeading";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { projects } from "@/components/site/data";
 
@@ -7,7 +6,7 @@ export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
   head: () => ({
     meta: [
-      { title: "Fahid Ahmed — Projects" },
+      { title: "Fahid's webpage" },
       {
         name: "description",
         content:
@@ -23,17 +22,30 @@ export const Route = createFileRoute("/projects")({
 });
 
 function ProjectsPage() {
+  // Separate current project from previous projects
+  const currentProject = projects.find(p => p.status === "IN BUILD");
+  const previousProjects = projects.filter(p => p.status !== "IN BUILD");
+
   return (
     <div className="mx-auto max-w-5xl px-5 pt-10 pb-10 sm:px-8 sm:pt-16">
-      <SectionHeading index="§ 03" label="spec sheets" title="Projects">
-        Personal builds — each one carries a designation, a date range, notes on
-        implementation, and the stack it runs on.
-      </SectionHeading>
+      {/* Current Project Section */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-bold text-foreground mb-6 sm:text-3xl">Right now, I am building,</h2>
+        {currentProject && (
+          <div className="grid gap-6 md:grid-cols-2">
+            <ProjectCard {...currentProject} />
+          </div>
+        )}
+      </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((p) => (
-          <ProjectCard key={p.designation} {...p} />
-        ))}
+      {/* Previous Projects Section */}
+      <div>
+        <h2 className="text-2xl font-bold text-foreground mb-6 sm:text-3xl">Previously I have built,</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {previousProjects.map((p) => (
+            <ProjectCard key={p.title} {...p} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,14 +1,17 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 
 const items = [
-  { to: "/", label: "About" },
-  { to: "/experience", label: "Experience" },
+  { to: "/", label: "Home" },
+  { to: "/experience", label: "Curriculum Vitae" },
   { to: "/projects", label: "Projects" },
 ] as const;
 
 export function Nav() {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  
   return (
-    <header className="sticky top-0 z-40 border-b border-rule/80 bg-background/85 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: "transparent" }}>
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-end px-5 sm:px-8">
         <nav className="flex items-center gap-1 sm:gap-2">
           {items.map((it) => (
@@ -16,11 +19,17 @@ export function Nav() {
               key={it.to}
               to={it.to}
               activeOptions={{ exact: true }}
-              activeProps={{ className: "!text-primary border-primary/60" }}
-              inactiveProps={{
-                className: "text-ink-dim border-transparent hover:text-foreground",
+              activeProps={{ 
+                className: isHomePage 
+                  ? "!text-white/90" 
+                  : "!text-black/90" 
               }}
-              className="label-mono !text-[0.68rem] border-t-2 px-2 py-1 transition-colors sm:px-3"
+              inactiveProps={{
+                className: isHomePage 
+                  ? "text-white/60 hover:text-white/80" 
+                  : "text-black/60 hover:text-black/80",
+              }}
+              className="label-mono !text-base px-2 py-1 transition-colors sm:px-3"
             >
               {it.label}
             </Link>

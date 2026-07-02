@@ -8,15 +8,22 @@ export interface TimelineEntryProps {
   bullets: string[];
   tags: string[];
   ref?: string;
+  logo?: string;
+  isFirst?: boolean;
 }
 
 export function TimelineEntry(p: TimelineEntryProps) {
   return (
-    <article className="relative grid grid-cols-[minmax(0,1fr)] gap-4 border-t border-rule/80 py-8 sm:grid-cols-[9rem_minmax(0,1fr)] sm:gap-10">
-      <div className="flex flex-col gap-2 sm:pt-1">
-        <span className="label-mono !text-primary">{p.date}</span>
-        {p.ref ? <span className="label-mono">ENTRY {p.ref}</span> : null}
-        {p.location ? <span className="label-mono">{p.location}</span> : null}
+    <article className={`relative grid grid-cols-[minmax(0,1fr)] gap-4 ${p.isFirst ? '' : 'border-t border-rule/80'} py-8 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-16`}>
+      <div className="flex flex-col items-center flex-shrink-0">
+        {p.logo && (
+          <img 
+            src={p.logo} 
+            alt={p.company} 
+            className="w-40 h-40 object-contain mb-3"
+          />
+        )}
+        <span className="label-mono !text-foreground text-center" style={{ fontSize: "0.65rem", whiteSpace: "nowrap" }}>{p.date}</span>
       </div>
       <div className="min-w-0">
         <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -27,7 +34,7 @@ export function TimelineEntry(p: TimelineEntryProps) {
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink-dim">
           {p.bullets.map((b, i) => (
             <li key={i} className="flex gap-3">
-              <span aria-hidden className="mt-2 h-px w-3 shrink-0 bg-primary/70" />
+              <span aria-hidden className="mt-1.5 text-foreground">•</span>
               <span>{b}</span>
             </li>
           ))}

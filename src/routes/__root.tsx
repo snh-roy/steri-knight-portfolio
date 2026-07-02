@@ -12,7 +12,6 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "../components/site/Nav";
-import { Footer } from "../components/site/Footer";
 
 function NotFoundComponent() {
   return (
@@ -79,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Fahid Ahmed — Portfolio" },
+      { title: "Fahid's webpage" },
       {
         name: "description",
         content:
@@ -134,12 +133,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col">
+      <div className="relative min-h-screen">
         <Nav />
-        <main className="flex-1">
+        <main className="relative">
           <Outlet />
         </main>
-        <Footer />
       </div>
     </QueryClientProvider>
   );

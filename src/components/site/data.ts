@@ -3,11 +3,10 @@ import type { ProjectCardProps } from "./ProjectCard";
 
 export const experience: TimelineEntryProps[] = [
   {
-    ref: "0002",
     date: "AUG 2025 — DEC 2025",
     role: "App Development Intern",
     company: "NYC Department of Transportation",
-    location: "New York, NY",
+    logo: "/NYCDOT.png",
     bullets: [
       "Built an interactive web application that helps New Yorkers report and track streetlight conditions, collaborating with another intern to improve how maintenance teams inspect and handle streetlight bases.",
       "Designed and implemented the full stack — Python and Flask on the backend, JavaScript on a dynamic front-end, HTML/CSS for the user interface.",
@@ -16,10 +15,10 @@ export const experience: TimelineEntryProps[] = [
     tags: ["Python", "Flask", "JavaScript", "HTML/CSS", "REST"],
   },
   {
-    ref: "0001",
     date: "JUL 2025 — AUG 2025",
     role: "Drupal Developer & Website Designer Intern",
     company: "Art Beyond Sight",
+    logo: "/ABS.png",
     bullets: [
       "Managed and customized Drupal content and components, improving site usability and accessibility across key public-facing pages.",
       "Worked with a group of interns to design and implement native forms, streamlining communication workflows with investors and partners.",
@@ -30,7 +29,7 @@ export const experience: TimelineEntryProps[] = [
 
 export const projects: ProjectCardProps[] = [
   {
-    designation: "SK-03",
+    designation: "",
     title: "AI Card Grade Estimator",
     status: "IN BUILD",
     dateRange: "MAY 2026 — PRESENT",
@@ -44,12 +43,12 @@ export const projects: ProjectCardProps[] = [
     stack: ["Python", "FastAPI", "OpenCV", "NumPy", "Hugging Face"],
   },
   {
-    designation: "SK-02",
+    designation: "",
     title: "Maze Game",
     status: "SHIPPED",
     dateRange: "APR 2025 — DEC 2025",
     description:
-      "A 2D maze game where players navigate obstacles to reach an exit — designed for beginners who want a simple, accessible puzzle experience.",
+      "A 2D maze game where players navigate obstacles to reach an exit.",
     bullets: [
       "Implemented a hint system using Breadth-First Search to generate and display the optimal solution path, improving gameplay clarity.",
       "Optimized rendering and movement logic with OpenGL transformations for smooth frame updates and responsive controls on common desktop setups.",
@@ -58,12 +57,12 @@ export const projects: ProjectCardProps[] = [
     stack: ["C++", "OpenGL", "BFS"],
   },
   {
-    designation: "SK-01",
+    designation: "",
     title: "Account Management & Login Interface",
     status: "SHIPPED",
     dateRange: "DEC 2024 — JAN 2025",
     description:
-      "A C++ account management system for users to register, log in, and recover passwords — built to make it easier to manage multiple accounts.",
+      "A C++ account management system for users to register, log in, and recover passwords, so managing multiple accounts is easy.",
     bullets: [
       "Implemented error handling and input validation to guide users through login retries and password resets, reducing confusion and failed attempts.",
       "Used C++ vector containers and file handling to manage account data during program execution.",
